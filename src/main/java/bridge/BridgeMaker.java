@@ -31,7 +31,7 @@ public class BridgeMaker {
     }
 
     /** 숫자로 입력받은 랜덤 변수를 U(1),D(0)으로 변환 */
-    public String convertNumToString(int num){
+    private String convertNumToString(int num){
         if(num==1) {
             return "U";
         }

@@ -1,7 +1,5 @@
 package bridge.view;
 
-import java.util.NoSuchElementException;
-
 /**
  * 사용자에게 게임 진행 상황과 결과를 출력하는 역할을 한다.
  */
@@ -41,7 +39,7 @@ public class OutputView {
         System.out.println("다리의 길이를 입력해주세요.");
     }
     /** 이동할 칸 선택 문구 */
-    public void choiceUpAndDown(){
+    public void printMoving(){
         System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
     }
     /** 게임 재시작 여부 확인 문구 출력 */
