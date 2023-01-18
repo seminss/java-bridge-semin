@@ -11,6 +11,7 @@ public class OutputView {
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public void printMap() {
+
     }
 
     /**
@@ -19,5 +20,23 @@ public class OutputView {
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public void printResult() {
+
+    }
+
+    /** 게임 시작 문구 출력 */
+    public void printStart(){
+        System.out.println("다리 건너기 게임을 시작합니다.");
+    }
+    /** 다리 길이 입력 문구 */
+    public void gettingLength(){
+        System.out.println("다리의 길이를 입력해주세요.");
+    }
+    /** 이동할 칸 선택 문구 */
+    public void choiceUpAndDown(){
+        System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
+    }
+    /** 게임 재시작 여부 확인 문구 출력 */
+    public void choiceRestart(){
+        System.out.println("게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)");
     }
 }
