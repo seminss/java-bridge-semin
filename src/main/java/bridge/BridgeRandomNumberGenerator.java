@@ -2,6 +2,7 @@ package bridge;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+/** 변경 x */
 public class BridgeRandomNumberGenerator implements BridgeNumberGenerator {
 
     private static final int RANDOM_LOWER_INCLUSIVE = 0;
