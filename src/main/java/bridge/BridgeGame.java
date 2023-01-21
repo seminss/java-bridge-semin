@@ -1,5 +1,7 @@
 package bridge;
 
+import bridge.view.OutputView;
+
 import java.util.List;
 
 /**
@@ -10,6 +12,7 @@ public class BridgeGame {
     private List<String> bridge;
     private int successCnt;
     private boolean success;
+    OutputView outputView=new OutputView();
 
     /**생성자*/
     public BridgeGame(List<String> bridge) {
@@ -29,6 +32,8 @@ public class BridgeGame {
      * 이동을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public boolean move(String userInput) {
+//        System.out.println(bridge);
+        outputView.printMap(successCnt+1,bridge,userInput);
         if (bridge.get(successCnt).equals(userInput)){
             this.successCnt++;
             if (successCnt==(bridge.size())){
