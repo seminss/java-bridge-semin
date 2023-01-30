@@ -1,9 +1,10 @@
 package bridge;
 
+import bridge.maker.BridgeMaker;
+import bridge.maker.BridgeRandomNumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class UnitTest {
 
         //when
         System.out.println(bridge);
-        System.out.println(bridgeGame.getSuccessCnt());
+        System.out.println(bridgeGame.getTmpCnt());
         if(bridgeGame.move("U")){
             System.out.println("U가 맞다");
         }
@@ -52,7 +53,7 @@ public class UnitTest {
 
         //then
         //success cnt 증가했나
-        System.out.println(bridgeGame.getSuccessCnt());
+        System.out.println(bridgeGame.getTmpCnt());
     }
 
 
