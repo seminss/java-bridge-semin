@@ -82,8 +82,7 @@ public class BridgeGame {
         if(userInput.equals("R")){
             return  true;
         }
-        // 게임 종료
-        return false;
+        return false; // 게임 종료
     }
 
     public boolean isSuccess(){
