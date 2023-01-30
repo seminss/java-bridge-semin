@@ -13,16 +13,21 @@ public class InputView {
     public int readBridgeSize() {
         while (true) {
             try {
-                String userInput = Console.readLine();
-                int bridgeSize = isNum(userInput);
-                if (bridgeSize < 3 || bridgeSize > 20) {
-                    throw new IllegalArgumentException();
-                }
+                int bridgeSize = getBridgeSize();
                 return bridgeSize;
             } catch (IllegalArgumentException e) {
                 System.out.println("[ERROR] 다리 길이는 3부터 20 사이의 숫자여야 합니다.");
             }
         }
+    }
+
+    private int getBridgeSize() {
+        String userInput = Console.readLine();
+        int bridgeSize = isNum(userInput);
+        if (bridgeSize < 3 || bridgeSize > 20) {
+            throw new IllegalArgumentException();
+        }
+        return bridgeSize;
     }
 
     /**
@@ -31,15 +36,20 @@ public class InputView {
     public String readMoving() {
         while (true) {
             try{
-                String howMove = Console.readLine();
-                if (!howMove.equals("U") && !howMove.equals("D")) {
-                    throw new IllegalArgumentException();
-                }
+                String howMove = getMove();
                 return howMove;
             }catch (Exception e){
                 System.out.println("[ERROR] U 또는 D만 입력해주세요.");
             }
         }
+    }
+
+    private static String getMove() {
+        String howMove = Console.readLine();
+        if (!howMove.equals("U") && !howMove.equals("D")) {
+            throw new IllegalArgumentException();
+        }
+        return howMove;
     }
 
     /**
@@ -48,15 +58,20 @@ public class InputView {
     public String readGameCommand() {
         while (true) {
             try{
-                String replay = Console.readLine();
-                if (!replay.equals("R") && !replay.equals("Q")) {
-                    throw new IllegalArgumentException();
-                }
+                String replay = getCommand();
                 return replay;
             }catch (Exception e){
                 System.out.println("[ERROR] R 또는 Q만 입력해주세요.");
             }
         }
+    }
+
+    private static String getCommand() {
+        String replay = Console.readLine();
+        if (!replay.equals("R") && !replay.equals("Q")) {
+            throw new IllegalArgumentException();
+        }
+        return replay;
     }
 
 
@@ -73,5 +88,4 @@ public class InputView {
             }
         }
     }
-
 }

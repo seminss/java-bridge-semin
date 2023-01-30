@@ -70,6 +70,13 @@
 
 <br>
 
+----
+- [ ] BridgeGame에 inputView, OutputView 제거
+- [ ] BridgeGame 코드 정리
+- [x] Map Print 정리하기
+
+BridgeGame.java에 있는 playgame을 application으로 끌고 와서 
+수정해야 할 것 같음. -> view 쓰는거 없애고 outputview에 bridge 세팅하는 것도 application에서 하기
 
 ---
 

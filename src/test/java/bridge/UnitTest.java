@@ -44,10 +44,10 @@ public class UnitTest {
         //when
         System.out.println(bridge);
         System.out.println(bridgeGame.getTmpCnt());
-        if(bridgeGame.move("U")){
+        if(bridgeGame.checkMove("U")){
             System.out.println("U가 맞다");
         }
-        if(bridgeGame.move("D")){
+        if(bridgeGame.checkMove("D")){
             System.out.println("D가 맞다");
         }
 
