@@ -1,5 +1,9 @@
 package bridge.view;
 
+import org.assertj.core.internal.ComparatorBasedComparisonStrategy;
+
+import java.util.List;
+
 /**
  * 사용자에게 게임 진행 상황과 결과를 출력하는 역할을 한다.
  */
@@ -10,15 +14,53 @@ public class OutputView {
      * <p>
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    public void printMap() {
-        System.out.printf("[");
-        printOX();
-        System.out.println("|");
+    public void printMap(int num, List<String> bridge, String userInput) {//몇번째 시도인지
+        System.out.print("[ ");
+        for(int i=0;i<num-1;i++){//현재까지 결과 출력
+            if (bridge.get(i).equals("U")){
+                System.out.print("O ");
+                System.out.print("| ");
+            }
+            else{
+                System.out.print("  ");
+                System.out.print("| ");
+            }
+        }
+        //윗쪽을 선택했다면 o 또는 x
+        if (userInput.equals("U")){
+            if(userInput.equals(bridge.get(num-1))){
+                System.out.print("O ");
+            }
+            else{System.out.print("X ");}
+        }else {
+            System.out.print("  ");
+        }
+
+        //윗쪽을 선택하지 않았다면 null
         System.out.println("]");
-    }
-
-    public void printOX(){
-
+        System.out.print("[ ");
+        for(int i=0;i<num-1;i++){
+            if (bridge.get(i).equals("D")){
+                System.out.print("O ");
+                System.out.print("| ");
+            }
+            else{
+                System.out.print("  ");
+                System.out.print("| ");
+            }
+        }
+        if (userInput.equals("D")){
+            if(userInput.equals(bridge.get(num-1))){
+                System.out.print("O ");
+            }
+            else{System.out.print("X ");}
+        }else {
+            System.out.print("  ");
+        }
+        //아랫쪽을 선택했다면 o 또는 x
+        //아랫쪽을 선택하지 않았다면 null
+        System.out.println("]");
+        System.out.println();
     }
 
     /**
@@ -26,24 +68,26 @@ public class OutputView {
      * <p>
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    public void printResult() {
-
-    }
+//    public void printResult(int num, List<String> bridge, String userInput) {
+//        System.out.println("최종 게임 결과");
+//        printMap(num, bridge, userInput);
+//
+//        System.out.printf("게임 성공 여부");
+//    }
 
     /** 게임 시작 문구 출력 */
-    public void printStart(){
-        System.out.println("다리 건너기 게임을 시작합니다.");
+    public void printStart(){System.out.println(ConstantView.START.getMessage());
     }
     /** 다리 길이 입력 문구 */
     public void gettingLength(){
-        System.out.println("다리의 길이를 입력해주세요.");
+    System.out.println(ConstantView.SIZE.getMessage());
     }
     /** 이동할 칸 선택 문구 */
     public void printMoving(){
-        System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
+        System.out.println(ConstantView.MOVE.getMessage());
     }
     /** 게임 재시작 여부 확인 문구 출력 */
     public void choiceRestart(){
-        System.out.println("게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)");
+        System.out.println(ConstantView.END.getMessage());
     }
 }

@@ -20,6 +20,7 @@ public class Application {
 
         // 다리 생성
         int size= inputView.readBridgeSize();
+        System.out.println();
         List<String> bridge= bridgeMaker.makeBridge(size);
 
         int tryCnt=1; //한 게임 당 하나의 다리만 존재하기 때문에 main에서 시도 횟수 세도 됨
@@ -32,7 +33,7 @@ public class Application {
 
     private static boolean playGame(InputView inputView, OutputView outputView, List<String> bridge) {
             BridgeGame bridgeGame=new BridgeGame(bridge);
-            System.out.println(bridge);
+//            System.out.println(bridge);
 
             //어떻게 이동할 지 받기
             while(true){
@@ -48,7 +49,7 @@ public class Application {
             if(isSuccess) {
                 //결과 출력, 게임 종료
                 System.out.println("게임 성공");
-                System.out.println(bridge);
+//                outputView.printResult();
                 return false;
             }
             else {
