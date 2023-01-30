@@ -68,12 +68,42 @@ public class OutputView {
      * <p>
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-//    public void printResult(int num, List<String> bridge, String userInput) {
-//        System.out.println("최종 게임 결과");
-//        printMap(num, bridge, userInput);
-//
-//        System.out.printf("게임 성공 여부");
-//    }
+    public void printResult(int num, List<String> bridge){
+        System.out.println("최종 게임 결과");
+        System.out.print("[ ");
+        for(int i=0;i<num;i++){//현재까지 결과 출력
+            if (bridge.get(i).equals("U")){
+                System.out.print("O ");
+                if(i!=num-1){
+                    System.out.print("| ");
+                }
+            }
+            else{
+                System.out.print("  ");
+                if(i!=num-1){
+                    System.out.print("| ");
+                }
+            }
+        }
+        System.out.println("]");
+
+        System.out.print("[ ");
+        for(int i=0;i<num;i++){
+            if (bridge.get(i).equals("D")){
+                System.out.print("O ");
+                if(i!=num-1){
+                    System.out.print("| ");
+                }
+            }
+            else{
+                System.out.print("  ");
+                if(i!=num-1){
+                    System.out.print("| ");
+                }
+            }
+        }
+        System.out.println("]\n");
+    }
 
     /** 게임 시작 문구 출력 */
     public void printStart(){System.out.println(ConstantView.START.getMessage());
